@@ -22,7 +22,11 @@ CN_CA=${CN_CA:0:64}
 CN_IA=${CN_IA:0:64}
 CN_WEB=${CN_WEB:0:64}
 
-mkdir -p /certs /ca
+for i in /certs /ca;do
+    if [ ! -e $i ];then
+        mkdir -p $i
+    fi
+done
 cd /ca
 
 CA_KEY_FILE=${CA_KEY_FILE:-/ca/ca.key}
