@@ -2,7 +2,7 @@
 
 echo "Entrypoint starting."
 
-set -Eeuo pipefail
+set -Exeuo pipefail
 trap "echo TRAPed signal" HUP INT QUIT TERM
 
 # configure nginx DNS settings to match host, why must we do that nginx?
